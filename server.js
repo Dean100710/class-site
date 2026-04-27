@@ -10,6 +10,11 @@ app.use(express.static('public'));
 
 initDatabase();
 
+// 首页：返回 public/index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 app.get('/api/messages', (req, res) => {
     const messages = db.prepare('SELECT * FROM messages ORDER BY created_at DESC LIMIT 50').all();
     res.json({ success: true, data: messages });
