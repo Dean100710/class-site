@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>2025级17班 | 青春家园</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">
+            <h2>🌟 2025级17班</h2>
+            <p>永远热烈，永远年少</p >
+        </div>
+        <ul class="nav-links">
+            <li><a href=" ">🏠 首页</a ></li>
+            <li><a href="#">📰 班级动态</a ></li>
+            <li><a href="#">👥 班级风采</a ></li>
+            <li><a href="#">📸 青春相册</a ></li>
+            <li><a href="#">📂 资源共享</a ></li>
+            <li><a href="#">💬 留言板</a ></li>
+        </ul>
+    </div>
+</div>
+
+<div class="container">
+    <div class="hero">
+        <h1>✨ 欢迎来到2025级17班 ✨</h1>
+        <p>追逐梦想，共同成长 | 我们是最棒的17班</p >
+        <div class="badge" id="countdownTimer">⏳ 加载中...</div>
+    </div>
+
+    <div class="card-grid">
+        <div class="card">
+            <h3>📢 班级动态</h3>
+            <div id="noticesList">
+                <div class="loading">加载中...</div>
+            </div>
+            <div style="margin-top: 16px; font-size: 0.8rem; color:#2b6c9e; text-align:right;">📌 班级新鲜事</div>
+        </div>
+
+        <div class="card">
+            <h3>👩‍🎓 班级风采</h3>
+            <div class="student-grid" id="studentList"></div>
+            <hr style="margin: 16px 0; border-color:#edf2f7;">
+            <div style="display: flex; justify-content: space-between;">
+                <span>🏆 荣誉墙: 校运动会团体亚军 · 文明班级</span>
+                <span>🎨 作品展 ></span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>📂 共享资源</h3>
+            <ul style="list-style: none;" id="resourceList">
+                <li>📄 · 期中复习资料 (PDF)</li>
+                <li>📊 · 班级通讯录+值日表</li>
+                <li>🎬 · 运动会精彩剪辑</li>
+                <li>📚 · 英语四六级备考包</li>
+            </ul>
+            <div style="margin-top: 12px; background:#F2F6FA; border-radius: 24px; padding: 12px;" id="statsInfo">
+                📅 考勤助手 | 加载中...
+            </div>
+        </div>
+    </div>
+
+    <div style="display: grid; gap: 32px; margin: 24px 0;">
+        <div class="card">
+            <h3>📸 青春相册 · 最新回忆</h3>
+            <div class="gallery-preview">
+                <div class="photo-item" style="background-image: linear-gradient(135deg, #b4cfdf, #d4e4f0);">🏞️ 秋游</div>
+                <div class="photo-item" style="background-image: linear-gradient(135deg, #f2e0c9, #f8efdf);">🏆 篮球赛</div>
+                <div class="photo-item" style="background-image: linear-gradient(135deg, #c1dbdd, #d5e9f0);">🎂 生日会</div>
+            </div>
+            <div style="text-align: center; margin-top: 6px;">👉 点击进入完整相册 👈</div>
+        </div>
+
+        <div class="time-capsule">
+            <h3 style="display: flex; gap: 10px;">⏳ 时光胶囊 · 给未来的自己</h3>
+            <p style="margin-bottom: 12px;">写一段话，永久保存，毕业时全班一起回顾 🌈</p >
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <input type="text" id="capsuleName" placeholder="你的名字" style="flex:1; border-radius: 40px;">
+                <textarea id="capsuleMsg" rows="1" placeholder="想对未来的自己说什么？" style="flex:2; border-radius: 20px;"></textarea>
+                <button id="sendCapsuleBtn">💌 封存寄语</button>
+            </div>
+            <p id="capsuleFeedback" style="font-size:0.8rem; margin-top: 8px; color:#4b6b46;"></p >
+            <div id="capsuleList" style="margin-top: 20px; max-height: 200px; overflow-y: auto; font-size: 0.85rem; border-top: 1px solid #e2dccd; padding-top: 12px;">
+                <div class="loading">加载胶囊记录...</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="message-board">
+        <h3>💬 班级留言板 · 树洞/问答</h3>
+        <div class="msg-list" id="msgList">
+            <div class="loading">加载留言中...</div>
+        </div>
+        <div class="input-group">
+            <input type="text" id="msgUser" placeholder="昵称 (可选匿名)" value="同学">
+            <input type="text" id="msgContent" placeholder="写点什么...">
+            <button id="postMsgBtn">发布留言</button>
+        </div>
+        <p style="font-size:0.7rem; margin-top: 10px;">✨ 文明互动，所有留言永久保存</p >
+    </div>
+
+    <div style="background: #e9f2f5; border-radius: 28px; padding: 16px 24px; margin: 32px 0; display: flex; justify-content: space-between; flex-wrap: wrap;">
+        <span>💰 班级经费：<span id="fundAmount">加载中...</span></span>
+        <span>🎓 距离期末还有 <strong id="examDays">??</strong> 天</span>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 2025级17班 · 青春纪念册 | 永远积极向上，永远热泪盈眶</p >
+    <p style="margin-top: 8px;">🌱 班级网站 | 留言时光永存</p >
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
