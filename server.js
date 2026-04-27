@@ -5,15 +5,18 @@ const { db, initDatabase } = require('./database');
 const app = express();
 const PORT = process.env.PORT || 8080;
 
+// 中间件
 app.use(express.json());
 app.use(express.static('public'));
 
 initDatabase();
 
-// 首页：返回 public/index.html
+// 首页（非常重要）
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
+
+// ========= 以下是你原有的 API =========
 
 app.get('/api/messages', (req, res) => {
     const messages = db.prepare('SELECT * FROM messages ORDER BY created_at DESC LIMIT 50').all();
@@ -69,5 +72,5 @@ app.get('/api/stats', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+    console.log(`✅ Server running on port ${PORT}`);
 });
